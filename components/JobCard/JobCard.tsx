@@ -7,7 +7,7 @@ export const JobCard = ({ name, description, tags }: any) => {
       <h2 className="font-bold text-lg">{name}</h2>
       <p className="mb-5">{description}</p>
       <div className="flex gap-3">
-        {tags.map((tag: string) => (
+        {(tags || []).map((tag: string) => (
           <Tag title={tag} />
         ))}
       </div>
