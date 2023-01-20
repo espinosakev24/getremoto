@@ -1,4 +1,4 @@
-import { JobCard } from 'components';
+import { JobCard, Navbar, SearchInput } from 'components';
 import { techJobs } from './jobsList';
 import { createClient } from '@supabase/supabase-js';
 import { useEffect, useState } from 'react';
@@ -24,15 +24,21 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="mx-52">
-      <h2 className="text-3xl font-extrabold text-center my-10">
-        ¡Get Remote!
-      </h2>
+    <div>
+      <Navbar />
 
-      <div className="flex flex-col gap-4">
-        {openings.map((job: any) => (
-          <JobCard name={job.title} {...job}></JobCard>
-        ))}
+      <div className="mx-80 mt-12">
+        <div className="mb-12 flex flex-col gap-2 items-center">
+          <h2 className="text-3xl font-extrabold text-center">¡Get Remote!</h2>
+          <div style={{ width: '400px' }}>
+            <SearchInput />
+          </div>
+        </div>
+        <div className="flex flex-col gap-4">
+          {openings.map((job: any) => (
+            <JobCard name={job.title} {...job}></JobCard>
+          ))}
+        </div>
       </div>
     </div>
   );
