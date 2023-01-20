@@ -41,4 +41,18 @@ Openings {
   TEXT slug
   TEXT title
 }
+
+Openings_Countries }o--|| Openings : "Are open for"
+Openings_Countries }o--|| Countries : "Have"
+Openings_Countries {
+  UUID opening_id FK
+  CHAR[3] country_code FK
+}
+
+
+Countries {
+  CHAR[3] country_code PK
+}
+
+
 ```

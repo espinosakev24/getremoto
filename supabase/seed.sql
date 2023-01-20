@@ -10,3 +10,12 @@ VALUES
   ('0185a7ed-9c10-c44d-ddf6-2854172f4f89', '0185a7f4-98b6-113a-e74d-b1cffc48f319', 'wizeline-android-software-engineer', 'Android Software Engineer'),
   ('0185a7ed-9c10-c44d-ddf6-2854172f4f89', '0185a7f4-c3cd-67a8-b6e3-5856e0d2810e', 'wizeline-ios-software-engineer', 'iOS Software Engineer'),
   ('0185a7ed-9c10-c44d-ddf6-2854172f4f89', '0185a7f4-e8f4-a668-ae4c-12f0d6adda16', 'wizeline-java-software-engineer', 'Java Software Engineer');
+
+INSERT INTO openings_countries (country_code, opening_id)
+VALUES 
+  ('col', '0185a7ee-6202-31ce-593d-a31f56dcc577'),
+  ('col', '0185a7f1-2af3-2feb-7d36-886b8f37c786'),
+  ('col', '0185a7f4-98b6-113a-e74d-b1cffc48f319'),
+  ('col', '0185a7f4-c3cd-67a8-b6e3-5856e0d2810e'),
+  ('col', '0185a7f4-e8f4-a668-ae4c-12f0d6adda16');
+
