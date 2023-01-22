@@ -1,29 +1,14 @@
 import { JobCard, Navbar, SearchInput } from "components";
-import { techJobs } from "./jobsList";
 import { createClient } from "@supabase/supabase-js";
-import { useEffect, useState } from "react";
 import Hero from "components/Hero";
+import { GetServerSideProps } from "next";
 
 export const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL || "",
   process.env.NEXT_PUBLIC_SUPABASE_KEY || ""
 );
 
-export default function Home() {
-  const [openings, setOpenings] = useState<any>([]);
-
-  const getOpenings = () =>
-    supabase
-      .from("openings")
-      .select("*")
-      .then(({ data }) => {
-        setOpenings(data || []);
-      });
-
-  useEffect(() => {
-    getOpenings();
-  }, []);
-
+export default function Home({ openings }) {
   return (
     <div>
       <Navbar />
@@ -38,3 +23,13 @@ export default function Home() {
     </div>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const { data } = (await supabase.from("openings").select("*")) as any;
+
+  return {
+    props: {
+      openings: data,
+    },
+  };
+};
