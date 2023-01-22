@@ -7,7 +7,7 @@ const CompanyAvatar = () => {
       width={50}
       height={50}
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/UruIT_logo.png/480px-UruIT_logo.png"
-      className="rounded"
+      className="rounded aspect-square w-50"
     />
   );
 };

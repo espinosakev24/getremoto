@@ -1,23 +1,22 @@
-import React from 'react';
-import { JobItem, Tag } from 'components';
+import React from "react";
+import { JobItem, Tag } from "components";
 
-import { GrFavorite } from 'react-icons/gr';
+import { GrFavorite } from "react-icons/gr";
 
-import { BsFolder } from 'react-icons/bs';
-import { GiMoneyStack } from 'react-icons/gi';
-import { GoLocation } from 'react-icons/go';
-import { BiTime } from 'react-icons/bi';
+import { BsFolder } from "react-icons/bs";
+import { GiMoneyStack } from "react-icons/gi";
+import { GoLocation } from "react-icons/go";
+import { BiTime } from "react-icons/bi";
+import CompanyAvatar from "components/avatars/CompanyAvatar";
 
 export const JobCard = ({
   name,
   description,
-  tags = ['Full time', 'Private', 'Urgent'],
+  tags = ["Full time", "Private", "Urgent"],
 }: any) => {
   return (
     <div className="justify-between border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 p-4 flex">
-      <div className="">
-        <div className="h-14 w-14 bg-slate-500 rounded-lg"></div>
-      </div>
+      <CompanyAvatar />
 
       <div className="w-full px-4">
         <h2 className="font-bold text-md text-left mb-2">{name}</h2>
